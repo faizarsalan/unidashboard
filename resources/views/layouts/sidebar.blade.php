@@ -10,13 +10,15 @@
 <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
 <body>
   <nav class="navbar">
     <ul class="navbar-nav">
       <li class="logo">
         <a href="" class="nav-link">
-          <span class="link-text" id="logo-text">UniDashboard</span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angles-right" class="svg-inline--fa fa-angles-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"></path></svg>
+          <span class="link-text" id="logo-text" style="font-family: Montserrat;">UniDashboard</span>
+          {{-- <img src="../storage/logo.png" style="width: 5vw;height:5vw"> --}}
+          <img src="../storage/logo.png" style="width: 5vw;height:5vw" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angles-right" class="svg-inline--fa fa-angles-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"></path></img>
         </a>
       </li>
       <li class="nav-item">
@@ -51,7 +53,8 @@
 
   <main>
     <div class="container">
-      <div class="w3-dropdown-hover" id="dropdownmenu"><p>{{Auth::user()->name}} <i class="carot"></i></p>
+      <div class="w3-dropdown-hover" id="dropdownmenu">
+        <p>{{Auth::user()->name}} <i class="carot"></i></p>
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
           <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="w3-bar-item w3-button">Logout</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
