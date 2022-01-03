@@ -104,13 +104,13 @@ main {
     width: 100%;
 }
 
-.logo svg {
+.logo img {
     transform: rotate(0deg);
-    transition: transform 300ms;
+    transition: transform 600ms;
 }
 
-.navbar:hover .logo svg {
-    transform: rotate(-180deg);
+.navbar:hover .logo img {
+    transform: rotate(-360deg);
 }
 
 #logo-text {
