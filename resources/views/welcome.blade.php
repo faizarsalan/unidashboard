@@ -25,8 +25,8 @@
     <a class="btn" style="background-color: white;color:rgba(200,160,160,255);" href="/register" role="button">Get Started</a>
     </div>
 
-    <div class="imageGetStarted" style="margin-left:5vw;margin-bottom:5vw">
-        <img src="../storage/get_started.png" alt="" style="width: 27vw;height:25vw">
+    <div class="imageGetStarted" style="margin-left:5vw;margin-bottom:7vw">
+        <img src="../storage/get_started.png" alt="" style="width: 22vw;height:22vw">
     </div>
 
 </div>
@@ -173,10 +173,19 @@ font-style: normal">
     </div>
 </div>
 
+<a href="#" class="second" style="color: white;margin-top:9.5vw;font-size:1.5vw">Terms and Conditions</a>
+<script>
+    document.querySelector(".second").addEventListener('click', function(){
+  Swal.fire("Terms & Conditions", "We are not responsible for any damages done to your personal, and mental health.");
+});
+</script>
 
-<a href="" style="color: white;margin-top:9.5vw;font-size:1.5vw">Terms and Conditions</a>
-
-<a href="" style="color: white;margin-top:9.5vw;font-size:1.5vw">Privacy</a>
+<a href="#" class="second2" style="color: white;margin-top:9.5vw;font-size:1.5vw">Privacy</a>
+<script>
+    document.querySelector(".second2").addEventListener('click', function(){
+  Swal.fire("Privacy", "We would like to ensure you that your data will be not be hacked.");
+});
+</script>
 
 <div class="socmedBox" style="margin-top:8vw; margin-right:5vw">
     <a href="#" class="fa fa-facebook"></a>

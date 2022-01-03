@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="testing" style="background-image:url(../storage/background1.png);background-size: 100% 100%; display:flex">
-    <img src="../storage/register_picture.png" alt="" style="width: 30vw;height:30vw;margin-bottom:2vw">
-    
-    <div class="container">
-        <div class="row" style="margin-left:3vw">
+
+    <img src="../storage/login_picture2.png" alt="" style="width: 15vw;height:20vw;margin-left:7vw; margin-bottom:10vw; margin-top:2vw">
+    <div class="container" style="margin-left:3vw">
+        <div class="row">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="

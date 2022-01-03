@@ -4,9 +4,9 @@
 
 <div class="testing" style="background-image:url(../storage/background1.png);background-size: 100% 100%; display:flex">
 
-    <img src="../storage/login_picture2.png" alt="" style="width: 30vw;height:30vw">
+    <img src="../storage/login_picture2.png" alt="" style="width: 15vw;height:20vw;margin-left:7vw; margin-bottom:6vw; margin-top:2vw">
     <div class="container" style="margin-left:3vw">
-        <div class="row" style="">
+        <div class="row">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="
@@ -70,14 +70,6 @@
                                         {{ __('Login') }}
                                     </button>
                                 </div>
-                            </div>
-
-                            <div class="d-flex justify-content-center">
-                                @if (Route::has('password.request'))
-                                <a class="btn btn-link" style="color:white" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                                @endif
                             </div>
                         </form>
                     </div>
