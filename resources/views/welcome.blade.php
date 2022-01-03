@@ -31,7 +31,7 @@
 
 </div>
 
-<div class="TextBox" style="display: flex;flex-direction:column;align-items:center;color:#585858;font-family: Montserrat;
+<div class="TextBox"  id="about" style="display: flex;flex-direction:column;align-items:center;color:#585858;font-family: Montserrat;
 font-style: normal">
 
     <div class="upperText" style="
@@ -128,7 +128,7 @@ font-style: normal">
 </div>
 
 
-<div class="joinUS" style="
+<div class="joinUS" id="team" style="
                    display: flex;
                    flex-direction:column;
                    align-items:center;
@@ -174,7 +174,7 @@ font-style: normal">
 </div>
 
 
-<a href="" style="color: white;margin-top:9.5vw;font-size:1.5vw">Terms and Coniditions</a>
+<a href="" style="color: white;margin-top:9.5vw;font-size:1.5vw">Terms and Conditions</a>
 
 <a href="" style="color: white;margin-top:9.5vw;font-size:1.5vw">Privacy</a>
 
