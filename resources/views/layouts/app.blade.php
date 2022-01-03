@@ -63,8 +63,8 @@
                         @guest
                         <ul class="navbar-nav me-auto d-flex justify-content-between" style="width:30vw;">
                             <a style="color:whitesmoke;font-size:1.3vw" href="{{ url('/') }}">Home</a>
-                            <a style="color:whitesmoke;font-size:1.3vw" href="#about" id="about-page">About</a>
-                            <a style="color:whitesmoke;font-size:1.3vw" href="#team" id="team-page">Team</a>
+                            <a style="color:whitesmoke;font-size:1.3vw" href="/#about" id="about-page">About</a>
+                            <a style="color:whitesmoke;font-size:1.3vw" href="/#team" id="team-page">Team</a>
                             <a style="color:whitesmoke;font-size:1.3vw"  href="">Explore</a>
                         </ul>
                         <div class="buttons" style="display:flex;justify-content:space-between;width:13vw">
