@@ -65,10 +65,11 @@ class PageController extends Controller
     }
 
     public function Agenda(Request $request){
-        $agenda = Agenda::where('user_id', $request->id)->first();
-        $details = AgendaDetail::where('agenda_id', $agenda->id)->get();
-
-        return view('agenda', compact($details));
+        $details = AgendaDetail::where('agenda_id', $request->id)->get();
+        $list = [
+            'agenda_details' => $details
+        ];
+        return view('agenda', $list);
     }
 
 }
