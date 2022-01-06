@@ -41,10 +41,14 @@ class PageController extends Controller
             'password' => 'required|min:8',
             'images' => 'image|nullable'
         ]);
-        
-        $images = $validating['images'];
 
-        if($images != NULL){
+        if($request->images == NULL){
+
+        }
+        
+        // $images = $validating['images'];
+
+        if($request->images != NULL){
             $file = $request->file('images');
             $fileName = $request->name . "." . $file->getClientOriginalExtension();
             Storage::putFileAs("public", $file, $fileName);
