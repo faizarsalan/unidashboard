@@ -24,6 +24,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/editProfile/{id}', [PageController::class, 'EditProfileForm']);
 Route::post('/edit/{id}', [PageController::class, 'EditProfile']);
 
+// AGENDA
+Route::get('/agenda/{id}', [PageController::class, 'Agenda']);
+
 
 Auth::routes();
 

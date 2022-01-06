@@ -62,4 +62,8 @@ class PageController extends Controller
         return redirect('home');
     }
 
+    public function Agenda(Request $request){
+        
+    }
+
 }
