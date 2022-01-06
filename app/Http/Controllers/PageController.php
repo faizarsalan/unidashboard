@@ -88,6 +88,13 @@ class PageController extends Controller
         return redirect()->back();
     }
 
+    public function EditAgenda(Request $request){
+
+        // AgendaDetail::where('id', $request->id)->update($request);
+
+        return redirect('home');
+    }
+
     public function CompleteAgenda(Request $request){
 
         AgendaDetail::where('id', $request->id)->delete();
