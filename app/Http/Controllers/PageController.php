@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class PageController extends Controller
@@ -49,6 +50,8 @@ class PageController extends Controller
             Storage::putFileAs("public", $file, $fileName);
             $validating['images'] = $fileName;
         }
+
+        $validating['password'] = Hash::make($validating['password']);
 
         User::where('id', $request->id)->update($validating);
 
