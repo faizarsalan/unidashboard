@@ -157,7 +157,7 @@
         <div class="TextBox" id="about" style="display: flex;flex-direction:column;align-items:center;color:#585858;font-family: Montserrat;
     font-style: normal">
 
-            <div class="upperText" style="
+            <div class="upperText" id="explore" style="
         font-weight: bold;
         font-size: 5vw;">
                 Explore

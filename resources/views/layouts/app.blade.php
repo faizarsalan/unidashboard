@@ -67,7 +67,7 @@
                             <a style="color:whitesmoke;font-size:1.3vw" href="{{ url('/') }}">Home</a>
                             <a style="color:whitesmoke;font-size:1.3vw" href="/#about" id="about-page">About</a>
                             <a style="color:whitesmoke;font-size:1.3vw" href="/#team" id="team-page">Team</a>
-                            <a style="color:whitesmoke;font-size:1.3vw"  href="">Explore</a>
+                            <a style="color:whitesmoke;font-size:1.3vw"  href="/#explore" id="explore-page">Explore</a>
                         </ul>
                         <div class="buttons" style="display:flex;justify-content:space-between;width:13vw">
                             @if (Route::has('login'))
