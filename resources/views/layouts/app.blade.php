@@ -71,7 +71,7 @@
                         </ul>
                         <div class="buttons" style="display:flex;justify-content:space-between;width:13vw">
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item ms-4">
                                     <a class="btn" style="background-color: white;color:rgba(200,160,160,255);" href="/login" role="button">Login</a>
                                 </li>
                             @endif
