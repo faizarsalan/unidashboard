@@ -154,3 +154,11 @@ main {
 .mt {
     padding-top: 50px;
 }
+
+input:focus {
+    outline: none;
+}
+
+button:hover{
+    cursor: pointer;
+}

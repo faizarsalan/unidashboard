@@ -9,12 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<style>
-  /* body{
-    margin = 0;
-  } */
-</style>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
 </head>
 
@@ -70,6 +65,7 @@
           </form>
         </div>
       </div>
+
       @if (Auth::user()->images == NULL)
         <div class="portrait"><img src="../storage/default_PP.png" alt="" style="padding:0.5vw;"></div>
       @else

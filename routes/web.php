@@ -15,12 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+// WELCOME AND HOME
 Route::get('/', [PageController::class, 'Welcome']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// EDIT PROFILE
+Route::get('/editProfile/{id}', [PageController::class, 'EditProfileForm']);
+Route::post('/edit/{id}', [PageController::class, 'EditProfile']);
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
