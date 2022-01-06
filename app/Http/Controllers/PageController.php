@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Agenda;
+use App\Models\AgendaDetail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,7 +65,10 @@ class PageController extends Controller
     }
 
     public function Agenda(Request $request){
-        
+        $agenda = Agenda::where('user_id', $request->id)->first();
+        $details = AgendaDetail::where('agenda_id', $agenda->id)->get();
+
+        return view('agenda', compact($details));
     }
 
 }
