@@ -17,6 +17,7 @@ class PageController extends Controller
         return view('welcome');
     }
 
+    // PROFILE
     public function EditProfileForm(Request $request){
 
         $images = NULL;
@@ -64,12 +65,34 @@ class PageController extends Controller
         return redirect('home');
     }
 
+
+    // AGENDA
+
     public function Agenda(Request $request){
         $details = AgendaDetail::where('agenda_id', $request->id)->get();
         $list = [
             'agenda_details' => $details
         ];
         return view('agenda', $list);
+    }
+
+    public function AddAgenda(Request $request){
+
+        $agenda_details = new AgendaDetail();
+        $agenda_details->time = $request->time;
+        $agenda_details->agenda = $request->agenda;
+        $agenda_details->agenda_id = $request->id;
+
+        $agenda_details->save();
+
+        return redirect()->back();
+    }
+
+    public function CompleteAgenda(Request $request){
+
+        AgendaDetail::where('id', $request->id)->delete();
+
+        return redirect()->back();
     }
 
 }

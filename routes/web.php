@@ -26,6 +26,8 @@ Route::post('/edit/{id}', [PageController::class, 'EditProfile']);
 
 // AGENDA
 Route::get('/agenda/{id}', [PageController::class, 'Agenda']);
+Route::post('/agenda/{id}', [PageController::class, 'AddAgenda']);
+Route::delete('/delete/{id}', [PageController::class, 'CompleteAgenda']);
 
 
 Auth::routes();
