@@ -9,6 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+  /* body{
+    margin = 0;
+  } */
+</style>
+
 </head>
 
 <body>
@@ -52,17 +59,22 @@
   </nav>
 
   <main>
-    <div class="container">
-      <div class="w3-dropdown-hover" id="dropdownmenu">
-        <p>{{Auth::user()->name}} <i class="carot"></i></p>
+    <div class="container" style="">
+      <div class="w3-dropdown-hover" id="dropdownmenu" style="margin-right: 0.5vw;">
+        <p style="">{{Auth::user()->name}} <i class="carot"></i></p>
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="/editProfile/{{Auth::user()->id}}" class="w3-bar-item w3-button">Edit Profile</a>
           <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="w3-bar-item w3-button">Logout</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
           </form>
         </div>
       </div>
-      <div class="portrait"><img src="../storage/test.png" alt=""></div>
+      @if (Auth::user()->images == NULL)
+        <div class="portrait"><img src="../storage/default_PP.png" alt="" style="padding:0.5vw;"></div>
+      @else
+        <div class="portrait"><img src="../storage/{{Auth::user()->images}}" alt=""></div>
+      @endif
     </div>
     @yield('content')
   </main>
