@@ -25,9 +25,10 @@ Route::get('/editProfile/{id}', [PageController::class, 'EditProfileForm']);
 Route::post('/edit/{id}', [PageController::class, 'EditProfile']);
 
 // AGENDA
-Route::get('/agenda/{id}', [PageController::class, 'Agenda']);
+Route::get('/agenda/{id}', [PageController::class, 'Agenda'])->name('agenda_view');
 Route::post('/agenda/{id}', [PageController::class, 'AddAgenda']);
-Route::post('/edit/{id}', [PageController::class, 'EditAgenda']);
+Route::get('/editAgendaForm/{id}', [PageController::class, 'EditAgendaForm']);
+Route::post('/editAgenda/{id}', [PageController::class, 'EditAgenda']);
 Route::delete('/delete/{id}', [PageController::class, 'CompleteAgenda']);
 
 

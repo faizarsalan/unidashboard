@@ -10,7 +10,7 @@
             <div class="form-group" style="">
                 <input
                     style="width: 5vw;margin-top: 0.1vw;height:3vw;border-radius:1vw;border:solid 0.1vw;text-align:center"
-                    type="text" class="form-control" name="time" placeholder="07.00" required>
+                    type="text" class="form-control" name="time" placeholder="07:00" required>
             </div>
 
             <div class="form-group">
@@ -47,7 +47,12 @@
                     @forelse ($agenda_details as $item)
 
                         <tr>
-                            <td>{{ $item->time }}</td>
+                            <td>                            
+                                @php
+                                    $time = $item->time;
+                                    echo number_format((float)$time, 2, '.', '');
+                                @endphp
+                            </td>
                             <td style="padding-left: 3vw">{{ $item->agenda }}</td>
                             <td>
                                 <form action="/delete/{{ $item->id }}" method="POST">
@@ -61,46 +66,7 @@
 
                             </td>
                             <td>
-                                <form action="/edit/{{ $item->id }}" method="POST" id="update-form">
-                                </form>
-
-                                <button class="edit"
-                                    style="width: 8.5vw;background-color:#0ea5e9;height:3vw;border-radius:1vw;border:none;color:white">Edit</button>
-                                <div>
-                                    <script>
-                                        document.querySelector(".edit").addEventListener('click', function() {
-                                            event.preventDefault()
-                                            Swal.fire({
-                                                title: 'Update Agenda',
-                                                html: 
-                                                `<input type="text" value='{{ $item->time }}' id="time" class="swal2-input" placeholder="Time">
-                                                <input type="text" value='{{ $item->agenda }}' id="agenda" class="swal2-input" placeholder="Agenda">`,
-                                                confirmButtonText: 'Confirm',
-                                                focusConfirm: false,
-                                                preConfirm: () => {
-                                                    const time = Swal.getPopup().querySelector('#time').value
-                                                    const agenda = Swal.getPopup().querySelector('#agenda').value
-                                                    if (!time || !agenda) {
-                                                        Swal.showValidationMessage(`Please fill in your agenda`)
-                                                    }
-                                                    return {
-                                                        time: time,
-                                                        agenda: agenda
-                                                    }
-                                                }
-                                            }).then(function() {
-                                                $("update-form").submit();
-                                                // Swal.fire({
-                                                //     icon: 'success',
-                                                //     title:
-                                                //     `Time: ${result.value.time}`,
-                                                //     text:
-                                                //     `Agenda: ${result.value.agenda}`.trim()
-                                                })
-                                            })
-                                        });
-                                    </script>
-                                </div>
+                                <a href="/editAgendaForm/{{$item->id}}"><button style="width: 8.5vw;background-color:#0ea5e9;height:3vw;border-radius:1vw;border:none;color:white">Edit</button></a>
                             </td>
                         </tr>
 

@@ -18,7 +18,7 @@ class CreateAgendaDetailsTable extends Migration
             $table->unsignedBigInteger('agenda_id');
             $table->foreign('agenda_id')->references('id')->on('agendas');
             $table->string('agenda');
-            $table->string('time');
+            $table->float('time', 4, 2);
             $table->timestamps();
         });
     }

@@ -65,11 +65,10 @@ class PageController extends Controller
         return redirect('home');
     }
 
-
     // AGENDA
 
     public function Agenda(Request $request){
-        $details = AgendaDetail::where('agenda_id', $request->id)->get();
+        $details = AgendaDetail::where('agenda_id', $request->id)->orderBy('time')->get();
         $list = [
             'agenda_details' => $details
         ];
@@ -88,11 +87,28 @@ class PageController extends Controller
         return redirect()->back();
     }
 
+    public function EditAgendaForm(Request $request){
+
+        $data = AgendaDetail::where('id', $request->id)->first();
+
+        $list = [
+            'detail' => $data
+        ];
+        return view('editAgenda', $list);
+    }
+
     public function EditAgenda(Request $request){
+        
+        $validating = $request->validate([
+            'time' =>'required',
+            'agenda' => 'required',
+        ]);
 
-        // AgendaDetail::where('id', $request->id)->update($request);
+        AgendaDetail::where('id', $request->id)->update($validating);
 
-        return redirect('home');
+        $agenda_id = Auth::user()->id;
+
+        return redirect()->route('agenda_view', ['id' => $agenda_id] );
     }
 
     public function CompleteAgenda(Request $request){
