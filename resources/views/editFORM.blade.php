@@ -6,8 +6,8 @@
     <div class="Container" style="margin-top:2vw;height:45vw;display: flex;justify-content:space-evenly;">
 
         <div class="rightContainer" style=
-                            "width:60vw;
-                            height:40vw;
+                            "width:55vw;
+                            height:35vw;
                             border: 1vw solid #FFFFFF; 
                             border-radius:0.7vw;
                             display:flex;

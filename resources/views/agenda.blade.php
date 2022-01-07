@@ -10,7 +10,7 @@
             <div class="form-group" style="">
                 <input
                     style="width: 5vw;margin-top: 0.1vw;height:3vw;border-radius:1vw;border:solid 0.1vw;text-align:center"
-                    type="text" class="form-control" name="time" placeholder="07:00" required>
+                    type="text" class="form-control" name="time" placeholder="07.00" required>
             </div>
 
             <div class="form-group">
@@ -19,7 +19,7 @@
             </div>
 
             <button type="submit"
-                style="width: 10vw;background-color:#22c55e;height:3vw;border-radius:1vw;border:none;color:white">Add
+                style="width: 10vw;background-color:#f59e0b;height:3vw;border-radius:1vw;border:none;color:white">Add
                 Agenda</button></a>
 
         </div>
@@ -60,7 +60,7 @@
                                     @csrf
                                     <div style="padding-left: 14vw; padding-right: 1vw">
                                         <button type="submit"
-                                            style="width: 8.5vw;background-color:#0ea5e9;height:3vw;border-radius:1vw;border:none;color:white">Complete</button>
+                                            style="width: 8.5vw;background-color:#22c55e;height:3vw;border-radius:1vw;border:none;color:white">Complete</button>
                                     </div>
                                 </form>
 
