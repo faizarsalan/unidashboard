@@ -77,8 +77,18 @@
             @endforeach
         </tbody>
     </table>
-    <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('file-form').submit();"+</a>
-          <form id="file-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-          </form>
+    <a href="#open-modal" class="act-btn">
+        +
+    </a>      
+    <div id="open-modal" class="modal-window">
+        <div class="outside">
+            <div class="inside" style="background-color: white;">
+                <a href="#" title="Close" class="modal-close" style="margin-bottom: 5vh">Close</a>
+                <h1>Upload Your File!</h1>
+                <small>Files should be in PDF</small>
+                <div><img src="/storage/uploadicon.png" alt="" height="200px" width="200px"></div>
+                <form action="/upload" method="POST" enctype="multipart/form-data"> @csrf<input type="file" accept="application/pdf" onchange="form.submit()" required name="file"></form>
+          </div>
+        </div>
+    </div>
 @endsection
