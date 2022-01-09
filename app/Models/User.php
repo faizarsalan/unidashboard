@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function Agenda(){
         return $this->hasOne(Agenda::class);
     }
+
+    public function File(){
+        return $this->hasMany(File::class);
+    }
 }

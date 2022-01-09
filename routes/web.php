@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,13 @@ Route::post('/agenda/{id}', [PageController::class, 'AddAgenda']);
 Route::get('/editAgendaForm/{id}', [PageController::class, 'EditAgendaForm']);
 Route::post('/editAgenda/{id}', [PageController::class, 'EditAgenda']);
 Route::delete('/delete/{id}', [PageController::class, 'CompleteAgenda']);
+
+Route::get('/file', [FileController::class, 'index']);
+Route::get('/view/{id}', [FileController::class, 'viewer']);
+Route::get('/share/{id}', [FileController::class, 'share']);
+Route::delete('/destroy/{id}', [FileController::class, 'delete']);
+
+
 
 
 Auth::routes();
