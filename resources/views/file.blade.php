@@ -1,12 +1,8 @@
 @extends('layouts.sidebar')
 @section('content')
     <style>
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
         .act-btn{
-      background:green;
+      background:#f59e0b;
       display: block;
       width: 50px;
       height: 50px;
@@ -24,14 +20,6 @@
       bottom:30px;
     }
 .act-btn:hover{background: blue}
-
-        table {
-            margin-top:2vw;
-            height:45vw;
-            display: flex;
-            justify-content:center;
-            width: 100vw;
-        }
         
         a {
             text-decoration: none;
@@ -41,22 +29,24 @@
             display: flex;
         }
     </style>
+    
     @if (!$file->isEmpty())
-        <table>
+    <div style="padding-left: 18vw">
+        <table class="styled-table">
             <tbody>
-                <th>
-                    <tr>
+                <thead>
+                    <tr style="background-color: #c8a0a0; color:#ffffff;">
                         <th>#</th>
                         <th>File Name</th>
                         <th>Shared</th>
                         <th>Action</th>
                     </tr>
-                </th>
+                </thead>
                 @foreach ($file as $i => $item)
                 @php
                     $url = false;
                     if($item -> public) $url = true;
-                @endphp
+                    @endphp
                     <tr>
                         <td>{{$i+1}}</td>
                         <td><a href="/view/{{$item->id}}">{{$item->name}}</a></td>
@@ -64,15 +54,15 @@
                             @if ($url)
                             <a href="/share/{{$item->id}}">Yes</a>
                             @else
-                                No
+                            No
                             @endif
                         </td>
                         <td class="action">
                             <a href="#open-update{{ $i }}">
                                 <button type="submit"
-                                    style="width: 5.5vw;background-color:#28A745;height:2vw;border-radius:1vw;border:none;color:white">Update</button>
+                                style="width: 5.5vw;background-color:#0ea5e9;height:2vw;border-radius:1vw;border:none;color:white; margin-right: 0.8vw">Update</button>
                             </a>
-
+                            
                             <div id="open-update{{ $i }}" class="modal-window">
                                 <div class="outside">
                                     <div class="inside" style="background-color: white;">
@@ -84,26 +74,24 @@
                                                 @if ($url)
                                                     <option value="1" selected>Yes</option>
                                                     <option value="0">No</option>
-                                                @else
+                                                    @else
                                                     <option value="1">Yes</option>
                                                     <option value="0" selected>No</option>
-                                                @endif
+                                                    @endif
                                             </select>
                                             <button type="submit"
-                                        style="width: 5.5vw;background-color:#28A745;height:2vw;border-radius:1vw;border:none;color:white">Save</button>
+                                            style="width: 5.5vw;background-color:#28A745;height:2vw;border-radius:1vw;border:none;color:white">Save</button>
                                         </form>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div> - </div>
-
+                            
                             <form action="/destroy/{{ $item->id }}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <div>
                                     <button type="submit"
-                                        style="width: 5.5vw;background-color:#F05F40;height:2vw;border-radius:1vw;border:none;color:white">Delete</button>
+                                    style="width: 5.5vw;background-color:#F05F40;height:2vw;border-radius:1vw;border:none;color:white">Delete</button>
                                 </div>
                             </form>
         
@@ -112,14 +100,15 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
     @else
-        <div class="empty">
-            <h1>You don't have any files :(</h1>
-            <img src="/storage/emptyfiles.png" alt="">
-        </div>
+    <div class="empty">
+        <h1>You don't have any files :(</h1>
+        <img src="/storage/emptyfiles.png" alt="">
+    </div>
     @endif
-        <a href="#open-modal" class="act-btn">
-            +
+    <a href="#open-modal" class="act-btn">
+        +
         </a>      
         <div id="open-modal" class="modal-window">
             <div class="outside">
