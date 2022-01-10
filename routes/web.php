@@ -37,6 +37,7 @@ Route::get('/view/{id}', [FileController::class, 'viewer']);
 Route::get('/share/{id}', [FileController::class, 'share']);
 Route::delete('/destroy/{id}', [FileController::class, 'delete']);
 Route::post('/upload',[FileController::class,'upload']);
+Route::post('/update/{id}',[FileController::class,'update']);
 
 
 

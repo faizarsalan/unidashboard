@@ -71,8 +71,9 @@
                         </tr>
 
                     @empty
-
+                        
                         No Agendas For Today.
+                        <img src="/storage/calendar.png" alt="" width="88%">
 
                     @endforelse
                 </table>

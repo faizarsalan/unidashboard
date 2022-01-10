@@ -20,8 +20,9 @@ class FileController extends Controller
     }
 
     public function share(Request $request){
-        $file = File::where('id', 1)->first();
-        return view('viewer',compact('file'));
+        $file = File::where('id', $request->id)->first();
+        if($file->public) return view('viewer',compact('file'));
+        else return redirect()->back();
     }
     
     public function delete(Request $request) {
@@ -31,14 +32,22 @@ class FileController extends Controller
 
     public function upload(Request $request) {
         $file = new File();
-        $validating = $request->validate([
-            'file' =>'required|mimes:pdf'
-        ]);
         Storage::putFileAs('/public/files', $request->file('file'), $request->file('file')->getClientOriginalName());
         $file->user_id = Auth::user()->id;
         $file->name = $request->file('file')->getClientOriginalName();
         $file->public = false;
         $file->save();
+        
+        return redirect()->back();
+    }
+    
+    public function update(Request $request) {
+        $file = File::where('id', $request->id)->where('user_id', Auth::user()->id)->first();
+        $filename = $request->name;
+        Storage::move('/public/files/'.$file->name.'.pdf', '/public/files/'.$filename.'.pdf');
+        $file->name = $filename;
+        $file->public = $request->public;
+        $file->update();
         
         return redirect()->back();
     }
