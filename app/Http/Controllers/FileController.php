@@ -37,14 +37,20 @@ class FileController extends Controller
         $file->name = $request->file('file')->getClientOriginalName();
         $file->public = false;
         $file->save();
-        
+
         return redirect()->back();
     }
     
     public function update(Request $request) {
         $file = File::where('id', $request->id)->where('user_id', Auth::user()->id)->first();
-        $filename = $request->name;
-        Storage::move('/public/files/'.$file->name.'.pdf', '/public/files/'.$filename.'.pdf');
+        $filename = $request->name; // new data
+        $word = ".pdf";
+        $flag = strpos($filename, $word);
+        if( $flag === false) $filename = $request->name.'.pdf';
+
+        if($filename !== $file->name)
+        Storage::move('/public/files/'.$file->name, '/public/files/'.$filename);
+
         $file->name = $filename;
         $file->public = $request->public;
         $file->update();
