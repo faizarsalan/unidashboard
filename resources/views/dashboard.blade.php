@@ -45,7 +45,9 @@
                                     <td style="padding: 12px 15px;">{{ $item->agenda }}</td>
                             @endif
                         @empty
+                        <div class="empty" style="margin-left: -19vw; margin-top: 1vw">
                             No Agendas For Today.
+                        </div>
                         @endforelse
                     </table>
                 </div>
