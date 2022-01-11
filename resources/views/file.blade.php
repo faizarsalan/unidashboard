@@ -32,7 +32,7 @@
     
     @if (!$file->isEmpty())
     <div style="padding-left: 18vw">
-        <table class="styled-table">
+        <table class="styled-table" style="color: #708090">
             <tbody>
                 <thead>
                     <tr style="background-color: #c8a0a0; color:#ffffff;">

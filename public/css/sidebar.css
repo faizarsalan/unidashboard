@@ -266,7 +266,7 @@ button:hover{
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
-        font-family: sans-serif;
+        font-family: Montserrat;
         min-width: 800px;
         box-shadow: 0 0 20px var(--themepink);
         border-radius: 5px 5px 0 0;
@@ -292,10 +292,35 @@ button:hover{
     
     .styled-table tbody tr:nth-of-type(even) {
         background-color: #f3f3f3;
-        font-weight: bold;
     }
     
     .styled-table tbody tr:last-of-type {
         border-bottom: 2px solid #b48c8c;
+    }
+
+    .styled-table2 {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: Montserrat;
+        min-width: 530px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        margin-top: -0.3vw;
+    }
+
+    .styled-table2 td {
+        padding: 12px 15px;
+    }
+
+    .styled-table2 tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    .styled-table2 thead {
+        border-bottom: 8px solid #b48c8c;
+    }
+
+    .styled-table2 tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
     }
     

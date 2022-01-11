@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use App\Models\AgendaDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,9 +26,11 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $details = AgendaDetail::where('agenda_id', Auth::user()->id)->orderBy('time')->get();
+        $details = AgendaDetail::where('agenda_id', Auth::user()->id)->orderBy('time')->latest('created_at')->limit(4)->get();
+        $file = File::where('user_id', Auth::user()->id)->latest('created_at')->limit(4)->get();
         $list = [
-            'agenda_details' => $details
+            'agenda_details' => $details,
+            'file' =>$file
         ];
         return view('dashboard', $list);
     }
