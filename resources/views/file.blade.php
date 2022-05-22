@@ -20,7 +20,7 @@
       bottom:30px;
     }
 .act-btn:hover{background: blue}
-        
+
         a {
             text-decoration: none;
         }
@@ -29,13 +29,13 @@
             display: flex;
         }
     </style>
-    
+
     @if (!$file->isEmpty())
     <div style="padding-left: 18vw">
-        <table class="styled-table" style="color: #708090">
+        <table class="styled-table">
             <tbody>
                 <thead>
-                    <tr style="background-color: #c8a0a0; color:#ffffff;">
+                    <tr>
                         <th>#</th>
                         <th>File Name</th>
                         <th>Shared</th>
@@ -62,7 +62,7 @@
                                 <button type="submit"
                                 style="width: 5.5vw;background-color:#0ea5e9;height:2vw;border-radius:1vw;border:none;color:white; margin-right: 0.8vw">Update</button>
                             </a>
-                            
+
                             <div id="open-update{{ $i }}" class="modal-window">
                                 <div class="outside">
                                     <div class="inside" style="background-color: white;">
@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <form action="/destroy/{{ $item->id }}" method="POST">
                                 @method('DELETE')
                                 @csrf
@@ -94,7 +94,7 @@
                                     style="width: 5.5vw;background-color:#F05F40;height:2vw;border-radius:1vw;border:none;color:white">Delete</button>
                                 </div>
                             </form>
-        
+
                         </td>
                     </tr>
                 @endforeach
@@ -109,7 +109,7 @@
     @endif
     <a href="#open-modal" class="act-btn">
         +
-        </a>      
+        </a>
         <div id="open-modal" class="modal-window">
             <div class="outside">
                 <div class="inside" style="background-color: white;">

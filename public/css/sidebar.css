@@ -3,10 +3,10 @@
     font-family: 'Playfair Display', serif;
     --text-primary: #ececec;
     --text-secondary: #ececec;
-    --bg-primary: #c8a0a0;;
-    --bg-secondary: #b48c8c;
+    --bg-primary: #003170;
+    --bg-secondary: #012555;;
     --transition-speed: 600ms;
-    --themepink: #C8A0A0;
+    --themepink: #003170;;
 }
 
 body {
@@ -126,17 +126,17 @@ main {
     margin-right: 100px;
 }
 
-.portrait { 
-    position: relative; 
-    width: 80px; 
-    height: 80px; 
-    overflow: hidden; 
-    border-radius: 50%; 
-} 
+.portrait {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
 
-.portrait img { 
-    width: 100%; 
-    height: auto; 
+.portrait img {
+    width: 100%;
+    height: auto;
 }
 
 #dropdownmenu {
@@ -144,8 +144,8 @@ main {
 }
 
 .carot {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     display: inline-block;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -210,7 +210,7 @@ button:hover{
       font-size: 150%;
       margin: 0 0 15px;
     }
-  
+
   .modal-close {
     color: black;
     line-height: 50px;
@@ -228,19 +228,19 @@ button:hover{
       color: black;
     }
 
-  
+
   .modal-window div {
     border-radius: 1rem;
   }
-  
+
   .modal-window div:not(:last-of-type) {
     margin-bottom: 15px;
   }
-  
+
   .modal-window small {
     color: lightgray;
   }
-  
+
   .modal-window .btn {
     background-color: white;
     padding: 1em 1.5em;
@@ -271,10 +271,11 @@ button:hover{
         box-shadow: 0 0 20px var(--themepink);
         border-radius: 5px 5px 0 0;
         overflow: hidden;
+        color: var(--bg-primary);
     }
 
     .styled-table thead tr {
-        background-color: #b48c8c;
+        background-color: var(--bg-primary);
         color: #ffffff;
         font-size: large;
         text-align: left;
@@ -289,11 +290,11 @@ button:hover{
     .styled-table tbody tr {
         border-bottom: 1px solid #dddddd;
     }
-    
+
     .styled-table tbody tr:nth-of-type(even) {
         background-color: #f3f3f3;
     }
-    
+
     .styled-table tbody tr:last-of-type {
         border-bottom: 2px solid #b48c8c;
     }
@@ -323,4 +324,3 @@ button:hover{
     .styled-table2 tbody tr:nth-of-type(even) {
         background-color: #f3f3f3;
     }
-    

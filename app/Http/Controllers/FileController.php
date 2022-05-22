@@ -24,7 +24,7 @@ class FileController extends Controller
         if($file->public) return view('viewer',compact('file'));
         else return redirect()->back();
     }
-    
+
     public function delete(Request $request) {
         File::where('id', $request->id)->delete();
         return redirect()->back();
@@ -32,7 +32,12 @@ class FileController extends Controller
 
     public function upload(Request $request) {
         $file = new File();
-        Storage::putFileAs('/public/files', $request->file('file'), $request->file('file')->getClientOriginalName());
+        // $request->file('file')->storeAs('files', $request->file('file')->getClientOriginalName());
+        // Storage::putFileAs('../storage/files', $request->file('file'), $request->file('file')->getClientOriginalName());
+        $uploaded = $request->file('file');
+        $uploadedname = $uploaded->getClientOriginalName();
+        Storage::disk('public')->putFileAs('files', $uploaded, $uploadedname);
+
         $file->user_id = Auth::user()->id;
         $file->name = $request->file('file')->getClientOriginalName();
         $file->public = false;
@@ -40,7 +45,7 @@ class FileController extends Controller
 
         return redirect()->back();
     }
-    
+
     public function update(Request $request) {
         $file = File::where('id', $request->id)->where('user_id', Auth::user()->id)->first();
         $filename = $request->name; // new data
@@ -54,7 +59,7 @@ class FileController extends Controller
         $file->name = $filename;
         $file->public = $request->public;
         $file->update();
-        
+
         return redirect()->back();
     }
 }

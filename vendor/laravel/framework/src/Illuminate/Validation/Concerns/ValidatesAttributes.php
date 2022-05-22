@@ -372,6 +372,29 @@ trait ValidatesAttributes
     }
 
     /**
+     * Validate that an array has all of the given keys.
+     *
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @param  array  $parameters
+     * @return bool
+     */
+    public function validateRequiredArrayKeys($attribute, $value, $parameters)
+    {
+        if (! is_array($value)) {
+            return false;
+        }
+
+        foreach ($parameters as $param) {
+            if (! Arr::exists($value, $param)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * Validate the size of an attribute is between a set of values.
      *
      * @param  string  $attribute
@@ -449,7 +472,11 @@ trait ValidatesAttributes
             return true;
         }
 
-        if ((! is_string($value) && ! is_numeric($value)) || strtotime($value) === false) {
+        try {
+            if ((! is_string($value) && ! is_numeric($value)) || strtotime($value) === false) {
+                return false;
+            }
+        } catch (Exception $e) {
             return false;
         }
 
@@ -537,7 +564,18 @@ trait ValidatesAttributes
     {
         $this->requireParameterCount(1, $parameters, 'digits');
 
-        return ! preg_match('/[^0-9]/', $value)
+        $length = strlen((string) $value);
+
+        if (((string) $value) === '.') {
+            return false;
+        }
+
+        // Make sure there is not more than one dot...
+        if (($length - strlen(str_replace('.', '', (string) $value))) > 1) {
+            return false;
+        }
+
+        return ! preg_match('/[^0-9.]/', $value)
                     && strlen((string) $value) == $parameters[0];
     }
 
@@ -555,7 +593,16 @@ trait ValidatesAttributes
 
         $length = strlen((string) $value);
 
-        return ! preg_match('/[^0-9]/', $value)
+        if (((string) $value) === '.') {
+            return false;
+        }
+
+        // Make sure there is not more than one dot...
+        if (($length - strlen(str_replace('.', '', (string) $value))) > 1) {
+            return false;
+        }
+
+        return ! preg_match('/[^0-9.]/', $value)
                     && $length >= $parameters[0] && $length <= $parameters[1];
     }
 
