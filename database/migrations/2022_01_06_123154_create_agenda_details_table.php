@@ -14,8 +14,8 @@ class CreateAgendaDetailsTable extends Migration
     public function up()
     {
         Schema::create('agenda_details', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('agenda_id');
+            $table->increments('id');
+            $table->unsignedInteger('agenda_id');
             $table->foreign('agenda_id')->references('id')->on('agendas');
             $table->string('agenda');
             $table->float('time', 4, 2);
