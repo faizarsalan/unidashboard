@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>StudyHub</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -41,10 +41,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-lightshadow-sm" style="background-color:rgba(200,160,160,255)">
+        <nav class="navbar navbar-expand-md navbar-lightshadow-sm" style="background-color:#003170">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="../storage/logo.png" alt="" width="100vw" height="100vw">
+                    <img src="../storage/headerlogo.png" alt="" width="100vw" height="100vw">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
                         <div class="buttons" style="display:flex;justify-content:space-between;width:13vw">
                             @if (Route::has('login'))
                                 <li class="nav-item ms-4">
-                                    <a class="btn" style="background-color: white;color:rgba(200,160,160,255);" href="/login" role="button">Login</a>
+                                    <a class="btn" style="background-color: white;color:#003170;" href="/login" role="button">Login</a>
                                 </li>
                             @endif
 
@@ -87,7 +87,7 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color:white" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-                                
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

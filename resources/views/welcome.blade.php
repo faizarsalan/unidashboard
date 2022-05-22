@@ -12,7 +12,7 @@
             font-weight: 800;
             font-size: 5vw;
             color: #FFFFFF;">
-                UniDashboard
+                StudyHub
             </p>
 
             <p style="
@@ -23,7 +23,7 @@
                 Your personal task manager, <br> get started now.
             </p>
 
-            <a class="btn" style="background-color: white;color:rgba(200,160,160,255);" href="/register"
+            <a class="btn" style="background-color: white;color:#003170;" href="/register"
                 role="button">Get Started</a>
         </div>
 
@@ -92,15 +92,15 @@
             <div class="text" style="
                             font-size:2vw;
                             margin-top:1vw">
-                Progress Tracker
+                Forum
             </div>
 
             <div class="text" style="font-size:1.3vw">
-                Track your progress whilst on your scholarship
+                Stuck on a problem? Ask away!
             </div>
 
             <div class="text" style="font-size:1.3vw">
-                or internship.
+                We got you covered.
             </div>
         </div>
 
@@ -147,32 +147,12 @@
             Join millions of users from around the world!
         </div>
         <a class="btn"
-            style="background-color: rgba(200,160,160,255);color:white;font-size:1.5vw;padding: 0.5vw 5vw" href="/register"
+            style="background-color: #003170;color:white;font-size:1.5vw;padding: 0.5vw 5vw" href="/register"
             role="button">JOIN US</a>
     </div>
 
 
     <br>
-    <div class="Explore">
-        <div class="TextBox" id="about" style="display: flex;flex-direction:column;align-items:center;color:#585858;font-family: Montserrat;
-    font-style: normal">
-
-            <div class="upperText" id="explore" style="
-        font-weight: bold;
-        font-size: 5vw;">
-                Explore
-            </div>
-
-            <div class="lowerText" style="font-size: 2vw">
-                Introduction to UniDashboard
-            </div>
-            <br>
-        </div>
-        <div class="mx-auto" class="embed-responsive embed-responsive-16by9" style="padding-left: 29vw; padding-top: 3vw; padding-bottom: 3vw">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TLahQwBlK6g"
-                frameborder="1" allowfullscreen style="height: 20vw;width: 40vw"></iframe>
-        </div>
-    </div>
 
 
 
