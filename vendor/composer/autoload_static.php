@@ -160,7 +160,6 @@ class ComposerStaticInite3f0c307498ac0602811690255acfbd0
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Dflydev\\DotAccessData\\' => 22,
-            'DevDojo\\Chatter\\' => 16,
             'DeepCopy\\' => 9,
             'Database\\Seeders\\' => 17,
             'Database\\Factories\\' => 19,
@@ -482,10 +481,6 @@ class ComposerStaticInite3f0c307498ac0602811690255acfbd0
         array (
             0 => __DIR__ . '/..' . '/dflydev/dot-access-data/src',
         ),
-        'DevDojo\\Chatter\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/devdojo/chatter/src',
-        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -697,21 +692,6 @@ class ComposerStaticInite3f0c307498ac0602811690255acfbd0
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
-        'DevDojo\\Chatter\\ChatterServiceProvider' => __DIR__ . '/..' . '/devdojo/chatter/src/ChatterServiceProvider.php',
-        'DevDojo\\Chatter\\Controllers\\ChatterAtomController' => __DIR__ . '/..' . '/devdojo/chatter/src/Controllers/ChatterAtomController.php',
-        'DevDojo\\Chatter\\Controllers\\ChatterController' => __DIR__ . '/..' . '/devdojo/chatter/src/Controllers/ChatterController.php',
-        'DevDojo\\Chatter\\Controllers\\ChatterDiscussionController' => __DIR__ . '/..' . '/devdojo/chatter/src/Controllers/ChatterDiscussionController.php',
-        'DevDojo\\Chatter\\Controllers\\ChatterPostController' => __DIR__ . '/..' . '/devdojo/chatter/src/Controllers/ChatterPostController.php',
-        'DevDojo\\Chatter\\Events\\ChatterAfterNewDiscussion' => __DIR__ . '/..' . '/devdojo/chatter/src/Events/ChatterAfterNewDiscussion.php',
-        'DevDojo\\Chatter\\Events\\ChatterAfterNewResponse' => __DIR__ . '/..' . '/devdojo/chatter/src/Events/ChatterAfterNewResponse.php',
-        'DevDojo\\Chatter\\Events\\ChatterBeforeNewDiscussion' => __DIR__ . '/..' . '/devdojo/chatter/src/Events/ChatterBeforeNewDiscussion.php',
-        'DevDojo\\Chatter\\Events\\ChatterBeforeNewResponse' => __DIR__ . '/..' . '/devdojo/chatter/src/Events/ChatterBeforeNewResponse.php',
-        'DevDojo\\Chatter\\Helpers\\ChatterHelper' => __DIR__ . '/..' . '/devdojo/chatter/src/Helpers/ChatterHelper.php',
-        'DevDojo\\Chatter\\Mail\\ChatterDiscussionUpdated' => __DIR__ . '/..' . '/devdojo/chatter/src/Mail/ChatterDiscussionUpdated.php',
-        'DevDojo\\Chatter\\Models\\Category' => __DIR__ . '/..' . '/devdojo/chatter/src/Models/Category.php',
-        'DevDojo\\Chatter\\Models\\Discussion' => __DIR__ . '/..' . '/devdojo/chatter/src/Models/Discussion.php',
-        'DevDojo\\Chatter\\Models\\Models' => __DIR__ . '/..' . '/devdojo/chatter/src/Models/Models.php',
-        'DevDojo\\Chatter\\Models\\Post' => __DIR__ . '/..' . '/devdojo/chatter/src/Models/Post.php',
         'Dflydev\\DotAccessData\\Data' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Data.php',
         'Dflydev\\DotAccessData\\DataInterface' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/DataInterface.php',
         'Dflydev\\DotAccessData\\Exception\\DataException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/DataException.php',

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3c89adc0d7661502a2f056b4605fda18ebca4126',
+        'reference' => 'ba5bb2d99349a4ac4216897a1ba9e08aec6d62c9',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -39,15 +39,6 @@
             'replaced' => array(
                 0 => '*',
             ),
-        ),
-        'devdojo/chatter' => array(
-            'pretty_version' => '0.2.7',
-            'version' => '0.2.7.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../devdojo/chatter',
-            'aliases' => array(),
-            'reference' => 'ca1b4d6e76dacbd77867d046f9bdcca0b6a75f61',
-            'dev_requirement' => false,
         ),
         'dflydev/dot-access-data' => array(
             'pretty_version' => 'v3.0.1',
@@ -409,7 +400,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3c89adc0d7661502a2f056b4605fda18ebca4126',
+            'reference' => 'ba5bb2d99349a4ac4216897a1ba9e08aec6d62c9',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -784,8 +775,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
