@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Agenda;
 use App\Models\AgendaDetail;
+use App\Models\chat;
+use App\Models\forum;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -114,6 +117,48 @@ class PageController extends Controller
     public function CompleteAgenda(Request $request){
 
         AgendaDetail::where('id', $request->id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function forum_index(Request $request){
+        $selectedForum = forum::select('forums.*')
+               ->where('forums.id', '=', $request->id)
+               ->first();
+
+        $all_chat = DB::table('chats')
+            ->join('users', 'users.id', '=', 'chats.userid_chat')
+            ->where('forum_id',$request->id)
+            ->get();
+        //dd($all_chat);
+        $list = [
+            'all_chat' => $all_chat,
+            'selectedForum'=>$selectedForum
+        ];
+        return view('forum', $list);
+    }
+
+    public function forum_post(Request $request){
+        //dd($request);
+        $obj = new chat; //create new category based on the newly submitted variables
+        $obj->chattext = $request->textchat;
+        $obj->forum_id = $request->forum_id;
+        $obj->userid_chat = $request->user_id;
+        $obj->save();
+
+        return redirect()->back();
+    }
+
+    public function add_forum_index(){
+        return view('add_forum');
+    }
+
+    public function add_forum_post(Request $request){
+        //dd($request);
+        $obj = new forum; //create new category based on the newly submitted variables
+        $obj->forumname = $request->forum_name;
+        $obj->category_id = "2";
+        $obj->save();
 
         return redirect()->back();
     }

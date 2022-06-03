@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
+use App\Models\forum;
+use Forums;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,8 +28,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $file = File::where('user_id', Auth::user()->id)->latest('created_at')->limit(4)->get();
+        $forums = forum::all();
+        //dd($forums);
         $list = [
-            'file' =>$file
+            'file' =>$file,
+            'forums'=>$forums
         ];
         return view('dashboard', $list);
     }

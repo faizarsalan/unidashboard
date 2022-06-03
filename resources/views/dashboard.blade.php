@@ -14,8 +14,8 @@
                                 box-shadow: 0.5vw 0.5vw 1vw 0.8vw #C0C0C0;">
 
             <div class="header" style="display: flex;align-items:center">
-                <h2 style="margin-left: 2vw">Your Forums</h2>
-                <a href="/agenda/{{ Auth::user()->id }}" style="color:blue; margin-top:1vw;margin-left:1vw;">See all</a>
+                <h2 style="margin-left: 2vw">All Forums</h2>
+                <a href="/add_forum" style="color:blue; margin-top:1vw;margin-left:1vw;">Add new Forum</a>
             </div>
 
 
@@ -30,9 +30,19 @@
                             <tr>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach ($forums as $i)
+                                    <tr>
+                                        <td>{{ $i->forumname }}</td>
+                                        <td><a href="/forum/{{ $i->id }}">Go to Forum</a></td>
+                                    </tr>
+                                @endforeach
+                        </tbody>
+                        @if ($forums->isEmpty())
                         <div class="empty" style="margin-left: -19vw; margin-top: 1vw">
                             No active forums.
                         </div>
+                        @endif
                     </table>
                 </div>
             </div>

@@ -39,6 +39,12 @@ Route::delete('/destroy/{id}', [FileController::class, 'delete']);
 Route::post('/upload',[FileController::class,'upload']);
 Route::post('/update/{id}',[FileController::class,'update']);
 
+//Forums
+Route::get('/forum/{id}',[PageController::class,'forum_index']);
+Route::post('/add_chat',[PageController::class,'forum_post']);
+
+Route::get('/add_forum',[PageController::class,'add_forum_index']);
+Route::post('/add_forum',[PageController::class,'add_forum_post']);
 
 
 
