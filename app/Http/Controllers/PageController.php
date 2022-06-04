@@ -129,6 +129,7 @@ class PageController extends Controller
         $all_chat = DB::table('chats')
             ->join('users', 'users.id', '=', 'chats.userid_chat')
             ->where('forum_id',$request->id)
+            ->select('chats.*', 'users.name')
             ->get();
         //dd($all_chat);
         $list = [
@@ -157,10 +158,51 @@ class PageController extends Controller
         //dd($request);
         $obj = new forum; //create new category based on the newly submitted variables
         $obj->forumname = $request->forum_name;
-        $obj->category_id = "2";
+        //$obj->category_id = "2";
         $obj->save();
 
         return redirect()->back();
     }
+
+    public function edit_chat_index(Request $request){
+        $selectedForum = forum::select('forums.*')
+               ->where('forums.id', '=', $request->forum_id)
+               ->first();
+
+        $all_chat = DB::table('chats')
+            ->join('users', 'users.id', '=', 'chats.userid_chat')
+            ->where('forum_id',$request->forum_id)
+            ->select('chats.*', 'users.name')
+            ->get();
+
+        $list = [
+            'selectedForum' => $selectedForum,
+            'user_id'=> $request->user_id,
+            'chat_id'=>$request->chat_id,
+            'all_chat'=> $all_chat,
+            'chattext'=> $request->chattext
+        ];
+        return view('edit_chat', $list);
+    }
+
+    public function edit_chat_post(Request $request){
+        //dd($request);
+        chat::where('chats.id', '=', $request->chat_id)
+        ->first()->update([
+        'chattext' => $request->textchat
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function delete_chat(Request $request){
+        $selectChat = chat::where('chats.id', '=', $request->chat_id)
+               ->first();
+        $selectChat->delete();
+
+        return redirect()->back();
+    }
+    
+    
 
 }

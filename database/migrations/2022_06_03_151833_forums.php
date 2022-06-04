@@ -16,8 +16,8 @@ class Forums extends Migration
         Schema::create('forums', function (Blueprint $table) {
             $table->id();
             $table->string('forumname', 255);
-            $table->BigInteger('category_id')->unsigned();
-            $table->foreign("category_id")->references("id")->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            // $table->BigInteger('category_id')->unsigned();
+            // $table->foreign("category_id")->references("id")->on('categories')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

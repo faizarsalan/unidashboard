@@ -46,6 +46,11 @@ Route::post('/add_chat',[PageController::class,'forum_post']);
 Route::get('/add_forum',[PageController::class,'add_forum_index']);
 Route::post('/add_forum',[PageController::class,'add_forum_post']);
 
+Route::get('/edit_chat',[PageController::class,'edit_chat_index']);
+Route::post('/edit_chat',[PageController::class,'edit_chat_post']);
+
+Route::get('/delete_chat',[PageController::class,'delete_chat']);
+
 
 
 Auth::routes();

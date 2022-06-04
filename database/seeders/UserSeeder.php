@@ -17,5 +17,8 @@ class UserSeeder extends Seeder
         DB::table('users') -> insert([
             ['name' => 'Faiz Arsalan', 'email' => 'wow@wow.com', 'password' => '$2y$10$02qLmZ61byd.mvXSoa3Hy.CZ8gbbyIFz4337KQKaNcvqv23gKIL1O']
         ]);
+        DB::table('users') -> insert([
+            ['name' => 'Andrean Ignasius', 'email' => 'admin@gmail.com', 'password'=>bcrypt('admin123')]
+        ]);
     }
 }

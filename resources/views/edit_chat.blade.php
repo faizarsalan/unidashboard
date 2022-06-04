@@ -14,8 +14,14 @@
                                 box-shadow: 0.5vw 0.5vw 1vw 0.8vw #C0C0C0;">
 
             <div class="header" style="display: flex;align-items:center">
+                <h2><strong>Currently in Editing Mode</strong></h2>
                 <h2 style="margin-left: 2vw">Forum Name: {{ $selectedForum->forumname }}</h2>
+                
+                    <a style="margin-left: 20vw" href="/forum/{{ $selectedForum->id }}">Go Back to Previous Forum</a>
+                
             </div>
+            
+            
 
 
             @php
@@ -32,43 +38,10 @@
                         <tbody>
                             @foreach ($all_chat as $i)
                                     <tr>
-                                        {{-- <td>{{ $i->id }}</td> --}}
                                         <td>{{ $i->chattext }}</td>
                                         <td>Replied by: {{ $i->name }}</td>
-                                        @if($i->userid_chat==Auth::user()->id)
-                                        <td>
-
-                                            <form action="/delete_chat" enctype="multipart/form-data">
-                                                <input id="chat_id" type="hidden" class="form-control @error('chat_id') is-invalid @enderror" name="chat_id" 
-                                                value="{{ $i->id }}"  autocomplete="chat_id" >
-                                                <button type="submit" class="btn btn-primary" style="float:right; ">
-                                                    Delete Chat
-                                                </button>
-                                            </form>
-
-
-                                            <form action="/edit_chat" enctype="multipart/form-data">
-                                                <input id="forum_id" type="hidden" class="form-control @error('forum_id') is-invalid @enderror" name="forum_id" 
-                                                value="{{ $selectedForum->id }}"  autocomplete="forum_id" >
-                                                <input id="user_id" type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id" 
-                                                value="{{ Auth::user()->id }}"  autocomplete="user_id" >
-                                                <input id="chat_id" type="hidden" class="form-control @error('chat_id') is-invalid @enderror" name="chat_id" 
-                                                value="{{ $i->id }}"  autocomplete="chat_id" >
-                                                <input id="chattext" type="hidden" class="form-control @error('chattext') is-invalid @enderror" name="chattext" 
-                                                value="{{ $i->chattext }}"  autocomplete="chattext" >
-                                                
-                                                <button type="submit" class="btn btn-primary" style="float:right; margin-right: 3px;">
-                                                    Edit Chat
-                                                </button>
-                                            </form>
-
-                                            
-                                        </td>
-                                        @else
-                                        <td></td>
-                                        @endif
                                     </tr>
-                            @endforeach
+                                @endforeach
                         </tbody>
                         @if ($all_chat->isEmpty())
                         <div class="empty" style="margin-top: 1vw">
@@ -107,15 +80,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <form method="POST" action="/add_chat" enctype="multipart/form-data">
+                    <form method="POST" action="/edit_chat" enctype="multipart/form-data">
                         @csrf
                     <tr>
-                        <input id="forum_id" type="hidden" class="form-control @error('forum_id') is-invalid @enderror" name="forum_id" 
-                        value="{{ $selectedForum->id }}"  autocomplete="forum_id" >
+                        <input id="chat_id" type="hidden" class="form-control @error('chat_id') is-invalid @enderror" name="chat_id" 
+                        value="{{ $chat_id }}"  autocomplete="chat_id" >
                         <input id="user_id" type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id" 
                         value="{{ Auth::user()->id }}"  autocomplete="user_id" >
-                        <td><textarea style="width:100%;" name="textchat" id="textchat" cols="30" rows="10" placeholder="Put Your Reply Here">
-                        
+                        <td><textarea style="width:100%;" name="textchat" id="textchat" cols="30" rows="10">
+                        {{ $chattext }}
                         </textarea></td>
                     </tr>
                     <tr>
@@ -123,7 +96,7 @@
 
                         <td>
                             <button type="submit" class="btn btn-primary" style="float:right;">
-                                {{ __('Reply Forum') }}
+                                {{ __('Update Reply') }}
                             </button>
                         </td>
                     </tr>
